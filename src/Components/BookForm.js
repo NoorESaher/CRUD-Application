@@ -20,6 +20,8 @@ const BookForm = (props) => {
     const values = [bookname, author, price, quantity];
     let errorMsg = "";
 
+    // once we submit the form, the handleOnSubmit method will be called.
+    //Inside this method, we're first checking if the user has entered all the details using the every array method:
     const allFieldsFilled = values.every((field) => {
       const value = `${field}`.trim();
       return value !== "" && value !== "0";
