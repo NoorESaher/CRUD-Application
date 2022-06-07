@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+// By Noor e Saher
+Here in This Project
+1- First I created Components. In Header.js Only I only specify two Links (Books List and Add Book)using Navlink instaed of Anchor Tag So it will not Reload After Render.
+2- In Booklist.js I simply Add Message (No books available. Please add some books).
+3- In AddBook.js I Initialized HandleOnSubmit Function which will Call in BookForm page when anyone Click on Submit Button after Filling the Form.
+4- In BookForm.js First I Initialized UseState Hook using Props.(Props are use to Render properties of Parent Component to Child Component). In everyfilef of Form I use onChange={handleInputChange}, when OnSubmit Fuunction is called it will {handleInputChange}. On upper portion of Fields Validations are added in switch case. once we submit the form, the handleOnSubmit method will be called.
+Inside this method, we're first checking if the user has entered all the details using the every array method:Once every filed is filled and anyone click on Submit Button it will call HandleOnSubmit Function and Move a user to AddBook Components. 
+5- Every Component is imported to AppRouter.js where we use UseContext State (By using it we dont need to add props to every page we simply add useContext and render parent component to every child component).  In Context Folder BooksContext.js is only added to import BooksContext.
+Books.js and EditBooks.js is created to Edit and Delete any Book from LocalHost and UI.
+whenever we're clicking on the Edit button for any of the books In Book.js Component, we're redirecting the user to the EditBook component using the history.push method by passing the id of the book to be edited.
+Then inside the EditBook component, we're using the useParams hook provided by react-router-dom to access the props.params.id. Once we've gotten that id, we're using the array find method to find out the particular book from the list of books with the matching provided id and this particular book we're passing to the BookForm component as a book prop: In the BookForm Component It will again check all the validations and return edited Data. That's How this CRUD APPLICATION Works. 
+Redirect.js is only created so if anyone search for any component from LOCALHOST Browser like localhost/contact or localhost/profile than it will redirect to Landing Page.
